@@ -14,7 +14,7 @@
   background-color: transparent;
 }
 .popup__close-button:focus{
-  outline: none ;
+  outline: none;
 }
 .popup__close-button:hover{
   opacity: .8;

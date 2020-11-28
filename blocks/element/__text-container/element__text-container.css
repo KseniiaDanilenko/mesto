@@ -1,6 +1,5 @@
 .element__text-container{
   margin: 0 auto;
-  padding: 0;
   box-sizing: border-box;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -11,6 +10,5 @@
   align-items: center;
   padding: 25px 15px 31px 21px;
   width: 100%;
-  box-sizing: border-box;
-    
+   
 }

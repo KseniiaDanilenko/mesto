@@ -4,7 +4,7 @@
   box-sizing: border-box;
   display: block;
   border: none;
-  font-family: inherit; 
+  font-family: inherit;
   height: 27px;
 }
 .form__item:nth-of-type(2){
