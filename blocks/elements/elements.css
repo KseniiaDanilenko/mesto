@@ -1,0 +1,12 @@
+.elements{
+  width: 68.75%;
+  margin: 0 auto;
+  padding: 51px 0 0;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 845px){
+  .elements{
+    width: 88.12%;
+    padding-top: 36px;
+  }
+}

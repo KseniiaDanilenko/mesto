@@ -1,0 +1,13 @@
+.header{
+  width: 68.75%;
+  padding:0;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding-top: 45px;
+}
+@media screen and (max-width: 845px){
+  .header{
+    padding-top: 28px;
+    width: 100%;
+  }
+}

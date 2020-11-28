@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesto Russia</title>   
+    <link rel="stylesheet" href="./pages/index.css">
+  </head>
+  <body class="body">
+    <div class="page">
+      <header class="header">
+        <a href="#" target="_blank"><img class="header__logo" alt="Логотип Mesto Russia" src="./images/logo.svg"></a>
+        <img class="header__line" alt="Линия в шапке сайта" src="./images/Line.svg">
+      </header>
+      <main class="content">
+        <section class="profile">
+          <img class="profile__avatar" alt="Изображение Жака-Ива Кусто" src="./images/avatar.jpg">
+          <div class="profile__info">
+            <div class="profile__container">
+              <h1 class="profile__name">Жак-Ив Кусто</h1>
+              <button class="profile__edit-button" type="button"></button>
+            </div>
+            
+            <p class="profile__about">Исследователь океана</p>
+          </div>
+          <button class="profile__add-button" type="button"></button>
+        </section>
+        <section class="elements">
+          <ul class="elements__list">
+            <li class="element">
+              <img class="element__photo" alt="Изображение реки" src="./images/altai.jpg">
+              <div class="element__text-container">
+                <h2 class="element__title">Алтай</h2>
+                <button type="button" class="element__like"></button>                
+              </div>
+            </li>            
+            <li class="element">
+              <img class="element__photo" alt="Изображение велосипедиста на фоне гор" src="./images/elbrus.jpg" >
+              <div class="element__text-container">
+                <h2 class="element__title">Эльбрус</h2>
+                <button type="button" class="element__like"></button>                
+              </div>
+            </li>
+            <li class="element">
+              <img class="element__photo" alt="Изображение озера у подножия скал" src="./images/karelia.jpg">
+              <div class="element__text-container">
+                <h2 class="element__title">Карелия</h2>
+                <button type="button" class="element__like"></button>                
+              </div>
+            </li>            
+            <li class="element">
+              <img class="element__photo" alt="Изображение храма Василия Блаженного" src="./images/moscow.jpg">
+              <div class="element__text-container">
+                <h2 class="element__title">Москва</h2>
+                <button type="button" class="element__like"></button>                
+              </div>
+            </li>
+            <li class="element">
+              <img class="element__photo" alt="Изображение Исаакиевского собора" src="./images/saint-petersburg.jpg">
+              <div class="element__text-container">
+                <h2 class="element__title">Санкт-Петербург</h2>
+                <button type="button" class="element__like"></button>                
+              </div>
+            </li>
+            <li class="element">
+              <img class="element__photo" alt="Изображение кабины на канатной дороге" src="./images/sochi.jpg">
+              <div class="element__text-container">
+                <h2 class="element__title">Сочи</h2>
+                <button type="button" class="element__like"></button>                
+              </div>
+            </li>
+          </ul>
+        </section>       
+      </main>
+      <footer class="footer">
+        <p class="footer__text">© 2020 Mesto Russia</p>
+      </footer>
+      <section class="popup">
+        <div class="popup__container">
+          <button class="popup__close-button" type="button"></button>  
+          <form class="form">
+            <h2 class="form__title">Редактировать профиль</h2>
+            <fieldset class="form__fieldset form__contact-info">
+              <input class="form__item form__item_type-name" type="text" name="name" value="Жак-Ив Кусто">
+              <div class="form__line"></div>
+              <input class="form__item form__item_type-about" type="text" name="about" value="Исследователь океана">
+              <div class="form__line"></div>
+            </fieldset>
+            
+            <fieldset class="form__fieldset form__send">
+              <button class="form__button" type="submit">Cохранить</button>
+            </fieldset>
+          </form>
+        </div>
+      </section>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>

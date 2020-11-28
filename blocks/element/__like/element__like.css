@@ -1,0 +1,17 @@
+.element__like{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  margin-left: 20px;
+  background-image: url(../../../images/like.svg);
+  width: 20.76px;
+  height: 18.13px;
+  border: none;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+}
+.element__like:focus{
+  outline: none;
+}

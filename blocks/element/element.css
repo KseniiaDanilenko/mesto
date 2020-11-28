@@ -1,0 +1,23 @@
+.element{
+  margin: 0 auto;
+  display: grid;
+  grid-template-areas: 
+  "image"
+  "text-container";
+  background-color: #fff;
+  justify-items: center;
+  align-items: center;
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 282px;
+
+}
+
+@media screen and (max-width: 845px){
+  .element{
+    margin-bottom: 20px;
+  }
+  .element:nth-of-type(6){
+    margin-bottom: 0;
+  }
+}

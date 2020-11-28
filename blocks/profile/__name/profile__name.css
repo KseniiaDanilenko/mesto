@@ -1,0 +1,14 @@
+.profile__name{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 500;
+  font-size: 42px;
+  line-height: calc(48/42);
+}
+@media screen and (max-width: 845px){
+  .profile__name{
+    font-size: 27px;
+    line-height: calc(32.68/27);
+  }
+}
