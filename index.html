@@ -10,17 +10,15 @@
     <div class="page">
       <header class="header">
         <a href="#" target="_blank"><img class="header__logo" alt="Логотип Mesto Russia" src="./images/logo.svg"></a>
-        <img class="header__line" alt="Линия в шапке сайта" src="./images/Line.svg">
       </header>
       <main class="content">
         <section class="profile">
-          <img class="profile__avatar" alt="Изображение Жака-Ива Кусто" src="./images/avatar.jpg">
+          <img class="profile__avatar" alt="Аватар пользователя" src="./images/avatar.jpg">
           <div class="profile__info">
             <div class="profile__container">
               <h1 class="profile__name">Жак-Ив Кусто</h1>
               <button class="profile__edit-button" type="button"></button>
-            </div>
-            
+            </div>            
             <p class="profile__about">Исследователь океана</p>
           </div>
           <button class="profile__add-button" type="button"></button>
@@ -78,22 +76,17 @@
       <section class="popup">
         <div class="popup__container">
           <button class="popup__close-button" type="button"></button>  
-          <form class="form">
-            <h2 class="form__title">Редактировать профиль</h2>
-            <fieldset class="form__fieldset form__contact-info">
-              <input class="form__item form__item_type-name" type="text" name="name" value="Жак-Ив Кусто">
-              <div class="form__line"></div>
-              <input class="form__item form__item_type-about" type="text" name="about" value="Исследователь океана">
-              <div class="form__line"></div>
+          <form class="popup__form" name="profile">
+            <h2 class="popup__title">Редактировать профиль</h2>
+            <fieldset class="popup__fieldset popup__contact-info">
+              <input class="popup__item popup__item_type_name" type="text" name="firstname" value="Жак-Ив Кусто">
+              <input class="popup__item popup__item_type_about" type="text" name="about" value="Исследователь океана">
             </fieldset>
-            
-            <fieldset class="form__fieldset form__send">
-              <button class="form__button" type="submit">Cохранить</button>
-            </fieldset>
+            <button class="popup__button" type="submit">Cохранить</button>        
           </form>
         </div>
       </section>
     </div>
-    <script src="./index.js"></script>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>

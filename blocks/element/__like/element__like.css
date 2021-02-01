@@ -14,4 +14,9 @@
 }
 .element__like:focus{
   outline: none;
+  opacity: .5;
+}
+.element__like:active{
+  background-image: url(../../../images/like_active.svg);
+  opacity: 1;
 }

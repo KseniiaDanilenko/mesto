@@ -5,8 +5,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+ 
 }
-@media screen and (max-width: 845px){
+@media screen and (max-width: 970px){
   .profile__container{
     justify-content: center;
   }
