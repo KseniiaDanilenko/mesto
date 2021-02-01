@@ -1,6 +1,6 @@
 
 .popup__item{
-  margin: 0;
+  margin: 0 0 30px;
   padding: 0;
   box-sizing: border-box;
   display: block;
@@ -12,8 +12,8 @@
   text-align: left;
 
 }
-.popup__item:nth-of-type(2){
-  margin-top: 30px;
+.popup__item:last-child{
+  margin: 0;
 }
 .popup__item:focus{
   outline: none;
