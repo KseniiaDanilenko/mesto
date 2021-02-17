@@ -63,6 +63,7 @@ const initialCards = [
     const card = elementTemplate.querySelector('.element').cloneNode(true);
     card.querySelector('.element__title').textContent = item.name;
     card.querySelector('.element__photo').src = item.link;
+    card.querySelector('.element__photo').alt = item.name;
     card.querySelector('.element__delete').addEventListener('click', function(evt){
     const deleteButton = evt.target;
     card.remove();
@@ -76,6 +77,7 @@ const initialCards = [
     popupImg.classList.add('popup_visible'); 
     const imgOpened = document.querySelector('.popup-img__item');
     imgOpened.src = imgClick.src;
+    imgOpened.alt = imgClick.alt;
   });
   return card;
 };

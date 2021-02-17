@@ -1,12 +1,8 @@
 .popup-img{
- display: flex;
-
- visibility: hidden;
+  display: flex;
+  visibility: hidden;
   opacity: 0;
   transition: visibility .2s, opacity .2s linear;
-  height: 0;
-
-
   padding: 0;
   box-sizing: border-box;
   width: 100%;
