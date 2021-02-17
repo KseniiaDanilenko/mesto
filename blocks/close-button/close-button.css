@@ -1,6 +1,6 @@
 .close-button{ 
   box-sizing: border-box;
-  background-image: url(../../../images/close.svg);
+  background-image: url(../../images/close.svg);
   width: 40px;
   height: 40px;
   background-position: center;

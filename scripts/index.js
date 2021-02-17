@@ -1,11 +1,11 @@
-let editButton = document.querySelector('.profile__edit-button');
-let popupEdit = document.querySelector('.popup-edit');
-let closeButtonEdit = document.querySelector('.popup-edit__close-button');
-let profileName = document.querySelector('.profile__name');
-let profileAbout = document.querySelector('.profile__about');
-let formEdit = document.querySelector('.popup-edit__form');
-let formEditName = document.querySelector('.popup-edit__item_type_name');
-let formEditAbout = document.querySelector('.popup-edit__item_type_about');
+const editButton = document.querySelector('.profile__edit-button');
+const popupEdit = document.querySelector('.popup-edit');
+const closeButtonEdit = document.querySelector('.popup-edit__close-button');
+const profileName = document.querySelector('.profile__name');
+const profileAbout = document.querySelector('.profile__about');
+const formEdit = document.querySelector('.popup-edit__form');
+const formEditName = document.querySelector('.popup-edit__item_type_name');
+const formEditAbout = document.querySelector('.popup-edit__item_type_about');
 
 
 function handleEditButtonClick(){
