@@ -25,67 +25,58 @@
         </section>
         <section class="elements">
           <ul class="elements__list">
-            <li class="element">
-              <img class="element__photo" alt="Изображение реки" src="./images/altai.jpg">
-              <div class="element__text-container">
-                <h2 class="element__title">Алтай</h2>
-                <button type="button" class="element__like"></button>                
-              </div>
-            </li>            
-            <li class="element">
-              <img class="element__photo" alt="Изображение велосипедиста на фоне гор" src="./images/elbrus.jpg" >
-              <div class="element__text-container">
-                <h2 class="element__title">Эльбрус</h2>
-                <button type="button" class="element__like"></button>                
-              </div>
-            </li>
-            <li class="element">
-              <img class="element__photo" alt="Изображение озера у подножия скал" src="./images/karelia.jpg">
-              <div class="element__text-container">
-                <h2 class="element__title">Карелия</h2>
-                <button type="button" class="element__like"></button>                
-              </div>
-            </li>            
-            <li class="element">
-              <img class="element__photo" alt="Изображение храма Василия Блаженного" src="./images/moscow.jpg">
-              <div class="element__text-container">
-                <h2 class="element__title">Москва</h2>
-                <button type="button" class="element__like"></button>                
-              </div>
-            </li>
-            <li class="element">
-              <img class="element__photo" alt="Изображение Исаакиевского собора" src="./images/saint-petersburg.jpg">
-              <div class="element__text-container">
-                <h2 class="element__title">Санкт-Петербург</h2>
-                <button type="button" class="element__like"></button>                
-              </div>
-            </li>
-            <li class="element">
-              <img class="element__photo" alt="Изображение кабины на канатной дороге" src="./images/sochi.jpg">
-              <div class="element__text-container">
-                <h2 class="element__title">Сочи</h2>
-                <button type="button" class="element__like"></button>                
-              </div>
-            </li>
-          </ul>
+          
+          </ul>      
         </section>       
       </main>
       <footer class="footer">
         <p class="footer__text">© 2020 Mesto Russia</p>
       </footer>
-      <article class="popup">
-        <div class="popup__container">
-          <button class="popup__close-button" type="button"></button>  
-          <form class="popup__form" name="profile">
-            <h2 class="popup__title">Редактировать профиль</h2>
-            <fieldset class="popup__fieldset popup__contact-info">
-              <input class="popup__item popup__item_type_name" type="text" name="firstname" value="Жак-Ив Кусто">
-              <input class="popup__item popup__item_type_about" type="text" name="about" value="Исследователь океана">
+      <article class="popup popup-edit">
+        <div class="popup__container popup-edit__container">
+          <button class="popup__close-button popup-edit__close-button" type="button"></button>  
+          <form class="popup__form popup-edit__form" name="profile">
+            <h2 class="popup__title popup-edit__title">Редактировать профиль</h2>
+            <fieldset class="popup__fieldset popup-edit__fieldset popup__contact-info popup-edit__contact-info">
+              <input class="popup__item popup-edit__item popup-edit__item_type_name" type="text" name="firstname" value="Жак-Ив Кусто">
+              <input class="popup__item popup-edit__item popup-edit__item_type_about" type="text" name="about" value="Исследователь океана">
             </fieldset>
-            <button class="popup__button" type="submit">Cохранить</button>        
+            <button class="popup__button popup-edit__button" type="submit">Cохранить</button>        
           </form>
         </div>
       </article>
+      <article class="popup popup-add">
+        <div class="popup__container popup-add__container">
+          <button class="popup__close-button popup-add__close-button" type="button"></button>  
+          <form class="popup__form popup-add__form" name="element">
+            <h2 class="popup__title popup-add__title">Новое место</h2>
+            <fieldset class="popup__fieldset popup-add__fieldset">
+              <input class="popup__item popup-add__item popup-add__item_type_name" type="text" name="name" placeholder="Название" value="">
+              <input class="popup__item popup-add__item popup-add__item_type_source" type="text" name="source" placeholder="Ссылка на картинку" value="">
+            </fieldset>
+            <button class="popup__button popup-add__button" type="submit">Создать</button>        
+          </form>
+        </div>
+      </article> 
+      
+      <article class="popup-img">
+        <div class="popup-img__container"> 
+        <img class="popup-img__item" src="" alt="">
+        <button class="popup-img__close-button popup__close-button" type="button"></button>
+      </div>
+       
+      </article>
+
+      <template class="element-template">
+        <li class="element">
+          <img class="element__photo" src="">
+          <button type="button" class ="element__delete"></button>         
+          <div class="element__text-container">
+            <h2 class="element__title"></h2>
+            <button type="button" class="element__like"></button>  
+          </div>
+        </li>
+      </template>
     </div>
     <script src="./scripts/index.js"></script>
   </body>

@@ -1,0 +1,9 @@
+.popup-add__button{
+  margin: 48px auto 0;
+  padding: 0;
+}
+@media screen and (max-width: 845px){
+  .popup-add__button{
+    margin-top: 45px;
+  }
+}

@@ -1,0 +1,6 @@
+.popup-add__item{
+  margin: 0 0 30px;
+}
+.popup-add__item:last-child{
+  margin: 0;
+}

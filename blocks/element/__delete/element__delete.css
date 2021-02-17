@@ -1,20 +1,22 @@
-.element__like{
+.element__delete{
   margin: 0;
   padding: 0;
+  position: absolute;
+  top: 18px;
+  right: 15px;
   box-sizing: border-box;
-  margin-left: auto;
-  background-image: url(../../../images/like.svg);
-  min-width: 20.76px;
-  height: 18.13px;
+  background-image: url(../../../images/delete.svg);
+  min-width: 18px;
+  height: 19.3px;
   border: none;
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
   background-color: transparent;
 }
-.element__like:focus{
+.element__delete:focus{
   outline: none;
 }
-.element__like:hover{
+.element__delete:hover{
   opacity: .6;
 }

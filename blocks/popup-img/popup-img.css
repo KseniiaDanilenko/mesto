@@ -1,9 +1,12 @@
-.popup{
-  display: flex;
-  visibility: hidden;
+.popup-img{
+ display: flex;
+
+ visibility: hidden;
   opacity: 0;
   transition: visibility .2s, opacity .2s linear;
   height: 0;
+
+
   padding: 0;
   box-sizing: border-box;
   width: 100%;
@@ -11,4 +14,10 @@
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, .5);
+  margin: auto;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
 }

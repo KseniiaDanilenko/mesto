@@ -1,0 +1,6 @@
+.popup-edit__item{
+  margin: 0 0 30px;
+}
+.popup-edit__item:last-child{
+  margin: 0;
+}
