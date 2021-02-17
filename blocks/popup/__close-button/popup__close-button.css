@@ -1,4 +1,4 @@
-.popup__close-button{ 
+.popup_close-button{ 
   box-sizing: border-box;
   background-image: url(../../../images/close.svg);
   width: 40px;
@@ -8,14 +8,14 @@
   border: none;
   background-color: transparent;
 }
-.popup__close-button:focus{
+.popup_close-button:focus{
   outline: none;
 }
-.popup__close-button:hover{
+.popup_close-button:hover{
   opacity: .6;
 }
 @media screen and (max-width: 845px){
-  .popup__close-button{
+  .popup_close-button{
     width: 26px;
     height: 26px;
   }
