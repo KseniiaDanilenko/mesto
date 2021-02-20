@@ -11,7 +11,7 @@ const formEditAbout = document.querySelector('.popup-edit__item_type_about');
 function handleEditButtonClick(){
   formEditName.value = profileName.textContent;
   formEditAbout.value = profileAbout.textContent;
-  popupEdit.classList.add('popup_visible');
+  openPopup(popupEdit);
 }
 function handleEditSubmit(event){
   event.preventDefault();
@@ -20,7 +20,7 @@ function handleEditSubmit(event){
   handleEditCloseButtonClick();
 }
 function handleEditCloseButtonClick(){
-  popupEdit.classList.remove('popup_visible');
+  closePopup(popupEdit);
 }
 
 formEdit.addEventListener('submit', handleEditSubmit);
@@ -62,8 +62,9 @@ const initialCards = [
   function createCard(item){
     const card = elementTemplate.querySelector('.element').cloneNode(true);
     card.querySelector('.element__title').textContent = item.name;
-    card.querySelector('.element__photo').src = item.link;
-    card.querySelector('.element__photo').alt = item.name;
+    const elementPhoto = card.querySelector('.element__photo');
+    elementPhoto.src = item.link;
+    elementPhoto.alt = item.name;
     card.querySelector('.element__delete').addEventListener('click', function(evt){
     const deleteButton = evt.target;
     card.remove();
@@ -72,9 +73,9 @@ const initialCards = [
     const like = evt.target;
     like.classList.toggle('element__like_active');
   });
-  card.querySelector('.element__photo').addEventListener('click',function(evt){
+  elementPhoto.addEventListener('click',function(evt){
     const imgClick = evt.target;
-    popupImg.classList.add('popup_visible'); 
+    openPopup(popupImg);
     const imgOpened = document.querySelector('.popup-img__item');
     imgOpened.src = imgClick.src;
     imgOpened.alt = imgClick.alt;
@@ -83,12 +84,12 @@ const initialCards = [
 };
 /*разделение функции создания карточек на 2 части*/
 function prependCard(item){
-  elementsList.prepend(item);
+  elementsList.prepend(createCard(item));
 };
 /*рендеринг карточек*/
+
 function renderCards() {
-  const cardsCreate = initialCards.map(createCard);
-  const cardPrepend = cardsCreate.map(prependCard);
+  initialCards.map(prependCard);
 }
 renderCards();
 
@@ -96,17 +97,16 @@ renderCards();
 const addButtonSubmit = document.querySelector('.popup-add__button');
 const cardName = document.querySelector('.popup-add__item_type_name'); 
 const cardSource = document.querySelector('.popup-add__item_type_source');
+const addForm = document.querySelector('.popup-add__form');
 
 function handleAddButtonSubmit(){
-  event.preventDefault(); 
-  initialCards.push({});
-  const newCard = initialCards[initialCards.length - 1];
+  event.preventDefault();
+  const newCard ={};
   newCard.name = cardName.value;
   newCard.link = cardSource.value;
-  prependCard(createCard(newCard));
+  prependCard(newCard);
   handleAddCloseButtonClick();
-  cardName.value="";
-  cardSource.value="";
+  addForm.reset();
 };
 
 addButtonSubmit.addEventListener('click', handleAddButtonSubmit);
@@ -116,7 +116,7 @@ const addButton = document.querySelector('.profile__add-button');
 const popupAdd = document.querySelector('.popup-add');
 
 function handleAddButtonClick(){
-  popupAdd.classList.add('popup_visible')
+ openPopup(popupAdd);
 };
 
 addButton.addEventListener('click', handleAddButtonClick);
@@ -125,7 +125,7 @@ addButton.addEventListener('click', handleAddButtonClick);
 const closeButtonAdd = document.querySelector('.popup-add__close-button');
 
 function handleAddCloseButtonClick(){
-  popupAdd.classList.remove('popup_visible')
+  closePopup(popupAdd);
 };
 
 closeButtonAdd.addEventListener('click', handleAddCloseButtonClick);
@@ -134,6 +134,19 @@ closeButtonAdd.addEventListener('click', handleAddCloseButtonClick);
 const closeButtonImg = document.querySelector('.popup-img__close-button');
 
 function handlecloseButtonImgClick(){
-  popupImg.classList.remove('popup_visible');
+  closePopup(popupImg);
 }
 closeButtonImg.addEventListener('click',handlecloseButtonImgClick);
+
+/*удаляем дублирование функции открыть попап*/
+function openPopup(item) {
+  item.classList.add('popup_visible');
+}
+/*удаляем дублирование функции открыть попап*/
+function closePopup(item) {
+  item.classList.remove('popup_visible');
+}
+/*добавляем функцию reset*/
+function resetForm(item){
+  item.reset();
+}
