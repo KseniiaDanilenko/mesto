@@ -8,6 +8,8 @@ const formEditName = document.querySelector('.popup-edit__item_type_name');
 const formEditAbout = document.querySelector('.popup-edit__item_type_about');
 
 
+const formEditButtonSubmit = document.querySelector('.popup-edit__button');
+
 function handleEditButtonClick(){
   formEditName.value = profileName.textContent;
   formEditAbout.value = profileAbout.textContent;
@@ -17,13 +19,13 @@ function handleEditSubmit(event){
   event.preventDefault();
   profileName.textContent = formEditName.value;
   profileAbout.textContent = formEditAbout.value;
-  handleEditCloseButtonClick();
+  handleEditCloseButtonClick();  
 }
 function handleEditCloseButtonClick(){
   closePopup(popupEdit);
 }
 
-formEdit.addEventListener('submit', handleEditSubmit);
+formEditButtonSubmit.addEventListener('click', handleEditSubmit);
 editButton.addEventListener('click', handleEditButtonClick);
 closeButtonEdit.addEventListener('click', handleEditCloseButtonClick);
 
@@ -121,6 +123,7 @@ function handleAddButtonClick(){
 
 addButton.addEventListener('click', handleAddButtonClick);
 
+
 /*закрытие попапа*/
 const closeButtonAdd = document.querySelector('.popup-add__close-button');
 
@@ -138,15 +141,61 @@ function handlecloseButtonImgClick(){
 }
 closeButtonImg.addEventListener('click',handlecloseButtonImgClick);
 
-/*удаляем дублирование функции открыть попап*/
-function openPopup(item) {
-  item.classList.add('popup_visible');
-}
-/*удаляем дублирование функции открыть попап*/
-function closePopup(item) {
-  item.classList.remove('popup_visible');
-}
+
 /*добавляем функцию reset*/
 function resetForm(item){
-  item.reset();
+  item.reset(evt);
 }
+/*очистка формы добавления карточки от ошибок при открытии*/
+
+addButton.addEventListener('click', clearForm);
+editButton.addEventListener('click', clearForm);
+
+function clearForm (){
+ const formVisible = document.querySelector('.popup_visible');
+
+const inputErrorList = Array.from(formVisible.querySelectorAll('.popup__item'));
+const spanErrorList = Array.from(formVisible.querySelectorAll('.popup__item-error'));
+  inputErrorList.forEach(function(inputItem){
+  inputItem.classList.remove('popup__item_type_error');
+  })
+  spanErrorList.forEach(function(spanItem){
+    spanItem.classList.remove('popup__item-error_active');
+  })
+  if(formVisible.classList.contains('popup-add')){
+    inputErrorList.forEach(function(inputItem){
+      inputItem.value="";
+      })
+      addButtonSubmit.classList.add('popup__button_disabled');
+  }
+  if(formVisible.classList.contains('popup-edit')){
+    formEditButtonSubmit.classList.remove('popup__button_disabled');
+  }
+}
+
+/*закрытие по esc*/
+
+function openPopup(item) {    
+  item.classList.add('popup_visible');
+  document.addEventListener('keyup', esc);
+  document.addEventListener('mousedown', handleLayoutClick);
+}
+function closePopup(item) {
+  item.classList.remove('popup_visible');
+  document.removeEventListener('keyup', esc);
+  document.removeEventListener('mousedown', handleLayoutClick);
+
+}
+
+function esc (evt){
+  if (evt.key === 'Escape'){
+    const openedPopup = document.querySelector('.popup_visible');
+closePopup(openedPopup);
+     }   
+    }
+
+    function handleLayoutClick(evt){
+if(evt.target.classList.contains('popup')){
+  closePopup(evt.target);
+}
+    }

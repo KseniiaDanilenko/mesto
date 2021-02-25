@@ -1,6 +1,8 @@
 .popup-edit__button{
   margin: 48px auto 0;
   padding: 0;
+
+  
 }
 @media screen and (max-width: 845px){
   .popup-edit__button{

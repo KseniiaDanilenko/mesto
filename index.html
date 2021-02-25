@@ -35,11 +35,13 @@
       <article class="popup popup-edit">
         <div class="popup__container popup-edit__container">
           <button class="close-button popup-edit__close-button" type="button"></button>  
-          <form class="popup__form popup-edit__form" name="profile">
+          <form class="popup__form popup-edit__form" name="profile" novalidate>
             <h2 class="popup__title popup-edit__title">Редактировать профиль</h2>
             <fieldset class="popup__fieldset popup-edit__fieldset popup__contact-info popup-edit__contact-info">
-              <input class="popup__item popup-edit__item popup-edit__item_type_name" type="text" name="firstname" value="Жак-Ив Кусто">
-              <input class="popup__item popup-edit__item popup-edit__item_type_about" type="text" name="about" value="Исследователь океана">
+              <input class="popup__item popup-edit__item popup-edit__item_type_name" id="name-input" type="text" name="firstname" value="Жак-Ив Кусто" minlength="2" maxlength="40" required>
+              <span class="popup__item-error popup-edit__item-error name-input-error"></span>
+              <input class="popup__item popup-edit__item popup-edit__item_type_about" id="about-input" type="text" name="about" value="Исследователь океана" minlength="2" maxlength="200" required>
+              <span class="popup__item-error popup-edit__item-error about-input-error"></span>
             </fieldset>
             <button class="popup__button popup-edit__button" type="submit">Cохранить</button>        
           </form>
@@ -48,11 +50,13 @@
       <article class="popup popup-add">
         <div class="popup__container popup-add__container">
           <button class="close-button popup-add__close-button" type="button"></button>  
-          <form class="popup__form popup-add__form" name="element">
+          <form class="popup__form popup-add__form" name="element" novalidate>
             <h2 class="popup__title popup-add__title">Новое место</h2>
             <fieldset class="popup__fieldset popup-add__fieldset">
-              <input class="popup__item popup-add__item popup-add__item_type_name" type="text" name="name" placeholder="Название" value="">
-              <input class="popup__item popup-add__item popup-add__item_type_source" type="text" name="source" placeholder="Ссылка на картинку" value="">
+              <input class="popup__item popup-add__item popup-add__item_type_name" id="placename-input"type="text" name="name" placeholder="Название" value="" minlength="2" maxlength="30" required>
+              <span class="popup__item-error popup-add__item-error placename-input-error"></span>
+              <input class="popup__item popup-add__item popup-add__item_type_source" id="link-input" type="url" name="source" placeholder="Ссылка на картинку" value="" required>
+              <span class="popup__item-error popup-add__item-error link-input-error"></span>
             </fieldset>
             <button class="popup__button popup-add__button" type="submit">Создать</button>        
           </form>
@@ -79,5 +83,6 @@
       </template>
     </div>
     <script src="./scripts/index.js"></script>
-  </body>
+    <script src="./scripts/validate.js"></script>
+
 </html>
