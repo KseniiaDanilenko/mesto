@@ -60,6 +60,8 @@ const initialCards = [
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   }];
   const popupImg = document.querySelector('.popup-img');
+  const imgOpened = document.querySelector('.popup-img__item');
+  const imgOpenedTitle = document.querySelector('.popup-img__title');
 
   function createCard(item){
     const card = elementTemplate.querySelector('.element').cloneNode(true);
@@ -78,9 +80,9 @@ const initialCards = [
   elementPhoto.addEventListener('click',function(evt){
     const imgClick = evt.target;
     openPopup(popupImg);
-    const imgOpened = document.querySelector('.popup-img__item');
     imgOpened.src = imgClick.src;
     imgOpened.alt = imgClick.alt;
+    imgOpenedTitle.textContent = item.name
   });
   return card;
 };
@@ -101,8 +103,8 @@ const cardName = document.querySelector('.popup-add__item_type_name');
 const cardSource = document.querySelector('.popup-add__item_type_source');
 const addForm = document.querySelector('.popup-add__form');
 
-function handleAddButtonSubmit(){
-  event.preventDefault();
+function handleAddButtonSubmit(evt){
+  evt.preventDefault();
   const newCard ={};
   newCard.name = cardName.value;
   newCard.link = cardSource.value;

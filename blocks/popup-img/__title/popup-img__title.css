@@ -1,0 +1,9 @@
+.popup-img__title{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  margin-top: 10px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: calc(14.52 / 12);
+}
